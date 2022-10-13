@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text Dimensions-->
+    <dimen name="xxxl_text_size">34sp</dimen>
+    <dimen name="xxl_text_size">24sp</dimen>
+    <dimen name="xl_text_size">20sp</dimen>
+    <dimen name="l_text_size">16sp</dimen>
+    <dimen name="default_text_size">14sp</dimen>
+    <dimen name="s_text_size">12sp</dimen>
+    <dimen name="xs_text_size">10sp</dimen>
+    <dimen name="xxs_text_size">8sp</dimen>
+    <dimen name="xxxs_text_size">6sp</dimen>
+
+    <!-- Margins -->
+    <dimen name="xxl_margin">64dp</dimen>
+    <dimen name="xl_margin">32dp</dimen>
+    <dimen name="l_margin">24dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="s_margin">12dp</dimen>
+    <dimen name="xs_margin">8dp</dimen>
+    <dimen name="xxs_margin">4dp</dimen>
+    <dimen name="xxxs_margin">2dp</dimen>
+
+    <!-- Icons -->
+    <dimen name="default_icon_size">24dp</dimen>
+    <dimen name="s_icon_size">16dp</dimen>
+    <dimen name="xs_icon_size">12dp</dimen>
+    <dimen name="l_icon_size">30dp</dimen>
+    <dimen name="xl_icon_size">56dp</dimen>
+    <dimen name="xxl_icon_size">70dp</dimen>
+    <dimen name="xxxl_icon_size">85dp</dimen>
+    <dimen name="xxxxl_icon_size">150dp</dimen>
+
+    <dimen name="card_view_icon_size">32dp</dimen>
+    <dimen name="card_view_card_icon_size">28dp</dimen>
+    <dimen name="section_view_icon_size">24dp</dimen>
+
+    <!-- Home Activity -->
+    <dimen name="home_act_drawer_layout_width">260dp</dimen>
+    <dimen name="home_act_option_icon_size">24dp</dimen>
+    <dimen name="home_act_logo_width">100dp</dimen>
+    <dimen name="home_act_logo_height">24dp</dimen>
+
+    <!-- Card View -->
+    <dimen name="card_view_large_icon_translation_y">-70dp</dimen>
+    <dimen name="card_view_large_icon_translation_x">50dp</dimen>
+
+    <!-- Skeleton -->
+    <dimen name="card_skeleton_height">170dp</dimen>
+    <dimen name="movements_skeleton_date_header_height">32dp</dimen>
+    <dimen name="movements_skeleton_movement_height">59dp</dimen>
+    <dimen name="date_movements_skeleton_width">120dp</dimen>
+
+    <!-- Blocking Load View -->
+    <dimen name="blocking_load_view_logo_size">80dp</dimen>
+
+    <dimen name="dynamic_screen_dialog_icon_size">60dp</dimen>
+    <dimen name="help_act_icon_size">80dp</dimen>
+    <dimen name="country_icon_size">40dp</dimen>
+    <dimen name="confirmation_dialog_pin_box_size">44dp</dimen>
+
+    <!--Buttons-->
+    <dimen name="default_button_size">70dp</dimen>
+
+</resources>
