@@ -12,6 +12,7 @@ import kotlinx.coroutines.test.setMain
 import mx.com.nu.challenge_shortener.domain.GetShortenedUrlUseCase
 import mx.com.nu.challenge_shortener.domain.IsUrlValid
 import mx.com.nu.challenge_shortener.domain.model.UrlShortener
+import mx.com.nu.challenge_shortener.ui.main.MainViewModel
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -79,5 +80,4 @@ class MainViewModelTest {
         )
 
     }
-
 }

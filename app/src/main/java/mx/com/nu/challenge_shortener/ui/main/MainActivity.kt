@@ -1,18 +1,19 @@
-package mx.com.nu.challenge_shortener.ui
+package mx.com.nu.challenge_shortener.ui.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import mx.com.nu.challenge_shortener.R
 import mx.com.nu.challenge_shortener.databinding.ActivityMainBinding
 import mx.com.nu.challenge_shortener.ktx.*
 import mx.com.nu.challenge_shortener.ktx.observe
+import mx.com.nu.challenge_shortener.data.LocalUrlRepository
 import mx.com.nu.challenge_shortener.ui.adapter.UrlShortAdapter
+import mx.com.nu.challenge_shortener.ui.listUrl.ListUrlActivity
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -30,23 +31,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        urlShortAdapter = UrlShortAdapter { openBrowser(it) }
+        //urlShortAdapter = UrlShortAdapter { openBrowser(it) }
         with(binding) {
+            btnList.setOnClickListener {
+                startActivity(Intent(this@MainActivity, ListUrlActivity::class.java))
+            }
             btnShorted.setOnClickListener {
                 if (urlTextInputEditText.text.toString().isNotEmpty()) {
                     viewModel.onExecute(urlTextInputEditText.text.toString().trim())
                 }
-            }
-            rvUrlShortener.apply {
-                setHasFixedSize(true)
-                layoutManager = LinearLayoutManager(this@MainActivity)
-                adapter = urlShortAdapter
-                addItemDecoration(
-                    DividerItemDecoration(
-                        this@MainActivity,
-                        DividerItemDecoration.VERTICAL,
-                    )
-                )
             }
             urlTextInputEditText.addTextChangedListener {
                 viewModel.validateUrl(it.toString().trim())
@@ -76,7 +69,11 @@ class MainActivity : AppCompatActivity() {
                     }
             }
             is MainViewModel.State.Success -> {
-                urlShortAdapter.addUrlData(state.urlShortener)
+                with(binding) {
+                    LocalUrlRepository.addUrl(state.urlShortener)
+                    tvTitleItem.text = state.urlShortener.urlShortener
+                    tvDescriptionItem.text = state.urlShortener.urlOriginal
+                }
                 hideProgress()
             }
             else -> Unit

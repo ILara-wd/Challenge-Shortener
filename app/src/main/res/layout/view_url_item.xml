@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/container"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="@dimen/s_margin"
     app:cardElevation="@dimen/xxs_margin"
@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/icv_card_unselected_background"
         android:paddingStart="@dimen/default_margin"
-        android:paddingEnd="@dimen/default_margin"
         android:paddingTop="@dimen/xs_margin"
+        android:paddingEnd="@dimen/default_margin"
         android:paddingBottom="@dimen/xs_margin">
 
         <TextView
@@ -31,7 +31,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/description_text_view"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivRemove"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Url Acortado" />
@@ -50,6 +50,18 @@
             app:layout_constraintStart_toStartOf="@+id/title_text_view"
             app:layout_constraintTop_toBottomOf="@+id/title_text_view"
             tools:text="Url Original" />
+
+        <ImageView
+            android:id="@+id/ivRemove"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/remove_color"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/description_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/title_text_view"
+            app:layout_constraintTop_toTopOf="@+id/title_text_view"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -15,4 +15,6 @@ class MainRepository @Inject constructor(
         return response!!.toDomain()
     }
 
+    fun getLocalUrlLis(): List<UrlShortener> = LocalUrlRepository.urlList
+
 }

@@ -3,6 +3,8 @@
     <string name="text_hint_shorter">Write URL</string>
     <string name="text_hint_url_incorrect">URL Incorrect Format</string>
     <string name="error_url">An error occurred while shortening the url</string>
+    <string name="empty_url">Empty URL List</string>
     <string name="text_btn_send_url">URL Incorrect Format</string>
     <string name="text_recently_shortened_url">Recently Shortened URLs</string>
+    <string name="text_btn_more_urls">More Urls</string>
 </resources>

@@ -5,6 +5,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="ebony">#A253D8</color>
     <color name="big_stone">#810ad1</color>
+    <color name="remove_color">#FF1100</color>
 
     <color name="blue">#285BA7</color>
     <color name="background">#656565</color>

@@ -8,6 +8,7 @@ import mx.com.nu.challenge_shortener.databinding.ViewUrlItemBinding
 import mx.com.nu.challenge_shortener.domain.model.UrlShortener
 
 internal class UrlShortAdapter(
+    private val listenerPosition: (UrlShortener, Int) -> Unit,
     private val listener: (String) -> Unit,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -23,21 +24,28 @@ internal class UrlShortAdapter(
         )
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
-        (holder as UrlViewHolder).bind(dataUrls[position])
+        (holder as UrlViewHolder).bind(dataUrls[position], position)
 
     override fun getItemCount(): Int = dataUrls.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addUrlData(data: UrlShortener) {
-        this.dataUrls.add(data)
+    fun addUrlData(data: List<UrlShortener>) {
+        this.dataUrls.addAll(data)
         notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun removeItem(urlShortener: UrlShortener, index: Int) {
+        this.dataUrls.remove(urlShortener)
+        notifyItemRemoved(index)
     }
 
     inner class UrlViewHolder(private val binding: ViewUrlItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: UrlShortener) = with(binding) {
+        fun bind(data: UrlShortener, index: Int) = with(binding) {
             titleTextView.text = data.urlShortener
+            ivRemove.setOnClickListener { listenerPosition(data, index) }
             descriptionTextView.text = data.urlOriginal
             container.setOnClickListener { listener(data.urlShortener) }
         }
